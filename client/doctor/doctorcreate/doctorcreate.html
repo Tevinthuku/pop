@@ -1,0 +1,87 @@
+<template name="doctorcreate">
+   {{#if isInRole 'customers'}}
+     <div class="row">
+        <form class="col s12">
+          <div class="row">
+              
+            <div class="input-field col s12">
+              <input id="icon_prefix" type="text" class="validate" name="diseaseName">
+              <label for="icon_prefix">Name</label>
+            </div>
+            <div class="input-field col s12">
+              <input id="icon_telephone" type="tel" class="validate" name="diseaseCode">
+              <label for="icon_telephone">Code</label>
+            </div>
+            
+            <div class="input-field col s12">
+              <textarea id="textarea1" class="materialize-textarea" name="diseaseDescription"></textarea>
+              <label for="icon_telephone">Description</label>
+            </div>
+          </div>
+        </form>
+ </div>
+       <div class="row">
+    <form class="col s12">
+        <div class="row">
+                <div class="input-field col s6 m3 l3">
+                      <input id="first_name2" type="text" class="validate" name="diseaseSymptom1">
+                      <label class="active" for="first_name2">Symptom 1</label>
+                </div>
+                
+                <div class="input-field col s6 m3 l3">
+                      <input id="first_name2" type="text" class="validate" name="diseaseSymptom2">
+                      <label class="active" for="first_name2">Symptom 2</label>
+                </div>
+                
+                <div class="input-field col s6 m3 l3">
+                      <input id="first_name2" type="text" class="validate" name="diseaseSymptom3">
+                      <label class="active" for="first_name2">Symptom 3</label>
+                </div>
+                
+                <div class="input-field col s6 m3 l3">
+                      <input id="first_name2" type="text" class="validate" name="diseaseSymptom4">
+                      <label class="active" for="first_name2">Symptom 4</label>
+                </div>
+        </div>
+    </form>
+ </div> 
+        <div class="row">
+    <form class="col s12">
+        <div class="row">
+                <div class="input-field col s6 m3 l3">
+                      <input id="first_name2" type="text" class="validate" name="diseaseCure1">
+                      <label class="active" for="first_name2">Cure 1</label>
+                </div>
+                
+                <div class="input-field col s6 m3 l3">
+                      <input id="first_name2" type="text" class="validate" name="diseaseCure2">
+                      <label class="active" for="first_name2">Cure 2</label>
+                </div>
+                
+                <div class="input-field col s6 m3 l3">
+                      <input id="first_name2" type="text" class="validate" name="diseaseCure3">
+                      <label class="active" for="first_name2">Cure 3</label>
+                </div>
+                
+                <div class="input-field col s6 m3 l3">
+                      <input id="first_name2" type="text" class="validate" name="diseaseCure4">
+                      <label class="active" for="first_name2">Cure 4</label>
+                </div>
+        </div>
+    </form>
+ </div> 
+ 
+
+  <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+    <a class="btn-floating btn-large pink darken-4 disease-submit">
+      <i class="large mdi-content-send"></i>
+    </a>
+  </div>
+   {{else}}
+     <h5>Nothing here</h5>
+   {{/if}}
+ 
+
+ 
+
+</template>

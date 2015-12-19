@@ -1,0 +1,51 @@
+<template name="nursedetails">
+
+
+
+
+    
+
+        <footer class="page-footer white">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col l6 s12">
+                        <h5>Patient Name</h5>
+                        <p>Info such as the patient number</p>
+                        <!--text area for more intel-->
+                        <div class="input-field nursesummary col s12">
+                                  <textarea id="textarea1" class="materialize-textarea" name="nurseSummary"></textarea>
+                                  <label for="textarea1">Summary</label>
+                        </div>
+                      </div>
+                      <div class="col l4 offset-l2 s12">
+                        <h5>BioData</h5>
+                        <form action="#">
+                            <h6>Temperature</h6>
+                                <p class="range-field">
+                                  <input type="range" id="test5" min="25" max="45" name="temp"/>
+                                  <span class="thumb" style="left: 290.281px; height: 0px; width: 0px; top: 10px; margin-left: -6px;"><span class="value">30</span></span>
+                                </p>
+                            <h6>Weight</h6>
+                                <p class="range-field">
+                                  <input type="range" id="test5" min="0" max="200" name="weight"/>
+                                  <span class="thumb" style="left: 290.281px; height: 0px; width: 0px; top: 10px; margin-left: -6px;"><span class="value">100</span></span>
+                                </p>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="footer-copyright red lighten-2">
+                    <div class="container">
+                Once Complete click the send Button
+                    <a class="grey-text text-lighten-4 submit-nurse right" href="#!">SEND</a>
+                    
+                    </div>
+                  </div>
+        </footer>    
+    
+    
+    
+    
+    
+ 
+</template>

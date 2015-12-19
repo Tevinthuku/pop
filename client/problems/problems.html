@@ -1,0 +1,82 @@
+<template name="problems">
+    
+
+               <!-- Modal Trigger -->
+                  <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+                      <a class="btn-floating btn-large pink darken-4 modal-trigger" href="#problems">
+                        <i class="large mdi-editor-mode-edit"></i>
+                      </a>
+                  </div>
+
+              <!-- Modal Structure -->
+              <div id="problems" class="modal bottom-sheet">
+                  <div class="modal-content">
+                    <h5 class="center-align">Write The Problem</h5>
+                    <!--The content-->
+                    <div class="row">
+                        <!--the header-->
+                            <div class="input-field col s12 m6">
+                                    <input id="first_name2" type="text" class="validate" name="problemsHeader">
+                                    <label class="active" for="first_name2">Header</label>
+                            </div>
+                            <!--the content-->
+                            <div class="input-field col s12 m6">
+                                    <textarea id="textarea1" class="materialize-textarea" name="problemsContent"></textarea>
+                                    <label class="active" for="first_name2">Complain</label>
+                            </div>
+                        </div>
+                    <!--Tags-->
+                    <div class="row">
+                              <form class="col s12">
+                                <div class="row">
+                                  <div class="input-field col s12 m4 l4">
+                                    
+                                    <input id="icon_prefix" type="text" class="validate" name="problemsTag1">
+                                    <label for="icon_prefix">First Tag</label>
+                                  </div>
+                                  <div class="input-field col s12 m4 l4">
+                                    
+                                    <input id="icon_telephone" type="text" class="validate" name="problemsTag2">
+                                    <label for="icon_telephone">Second Tag</label>
+                                  </div>
+                                  
+                                  <div class="input-field col s12 m4 l4">
+                                    
+                                    <input id="icon_telephone" type="text" name="problemsTag3">
+                                    <label for="icon_telephone">Third Tag</label>
+                                  </div>
+                                </div>
+                              </form>
+                    </div>
+          
+                  </div>
+                  <div class="modal-footer">
+                    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat problems-submit">Send</a>
+                  </div>
+              </div>
+              
+              <!--the problems-->
+              <div class="row">
+                {{#each problem}}
+                    {{> problemsItem}}
+                {{/each}}
+              </div>
+</template>
+<!--problems item-->
+<template name="problemsItem">
+
+       <div class="col s12 m6 l4">
+                  <div class="card pink darken-3">
+                    <div class="card-content white-text">
+                      <span class="card-title">{{problemsHeader}}</span>
+                      <p class="truncate">{{problemsContent}}</p>
+                    </div>
+                    <div class="card-action">
+                      <a href="{{pathFor route="problemsDetails"}}">View Full</a>
+                      <a href="#" class="problem-delete">Delete</a>
+                    </div>
+                  </div>
+       </div>
+  
+            
+</template>

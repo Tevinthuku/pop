@@ -1,0 +1,127 @@
+<template name="old">
+{{> searchConsultation}}
+
+          <!-- Modal Trigger -->
+      <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+        <a class="modal-trigger btn-floating btn-large pink accent-4" href="#patient">
+          <i class="large mdi-action-search"></i>
+        </a>
+      </div>
+    
+      <!-- Modal Structure -->
+      <div id="patient" class="modal modal-fixed-footer">
+        <div class="modal-content">
+          <h4 class="center-align">Search Patient</h4>
+                  {{> searchPatient}}
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-action modal-close waves-effect waves-purple btn-flat ">Agree</a>
+        </div>
+      </div>        
+
+         
+</template>
+
+
+<template name="searchPatient">
+    
+    
+      {{> EasySearch.Input index=PatientsIndex}}
+    
+    <ul class="collapsible-Search-patient-revisit popout" data-collapsible="accordion">
+             {{#EasySearch.Each index=PatientsIndex}}
+                   
+                                <li>
+                                  <div class="collapsible-header">
+                                      
+                                      {{firstName}} {{middleName}} {{lastName}}
+                                     
+                                     
+                                  </div>
+                                  <div class="collapsible-body">
+                                      
+                                        <div class="row">
+                                            <div class="col s12">
+                                                <div class="chip">First Visit Date :{{createdAt}}</div>
+                                            </div>
+                                            
+                                          <div class="col s12">
+                                             <div class="chip">Location :{{location}}</div> 
+                                              
+                                          </div>
+                                          <div class="col s12">
+                                              <div class="chip">Gender :{{sex}}</div>
+                                          </div>
+                                          <div class="col s12">
+                                              
+                                              <div class="chip">Age :{{age}}</div>
+                                              
+                                          </div>
+                                          
+                                          
+                                          
+                                            <div class="col s12">
+                                              
+                                              <div class="chip">Visits :{{visit}}</div>
+                                              
+                                            </div>
+                                            
+                                    
+                                            <div class="row"><h5>Consultation fee</h5></div>
+                                            <div class="col s12">
+                                              
+                                                  <div class="input-field col s6">
+                                                      <input value="Paid" id="first_name2" type="text" class="validate" name="revisit-value">
+                                                      <label class="active" for="first_name2">Paid Or Not-Paid</label>
+                                                  </div>
+
+                                              
+                                            </div>
+                              
+                                      </div>
+
+                                        
+                                          <div class="revisit" style="bottom: 60px; right: 24px;">
+                                            <a class="btn-floating btn-large pink darken-2">
+                                              <i class="large mdi-av-playlist-add"></i>
+                                            </a>
+                                          </div>
+                                      
+                                  </div>
+                                </li>
+                     
+             {{/EasySearch.Each}} 
+    </ul>
+    
+    
+    
+      {{> EasySearch.LoadMore index=PatientsIndex}}
+    
+      {{#EasySearch.IfNoResults index=PatientsIndex}}
+        
+            <h6 class="center-align">No results found!</h6>
+    
+      {{/EasySearch.IfNoResults}}
+  
+
+</template>
+
+<template name="searchConsultation">
+    {{> EasySearch.Input index=ConsultationIndex}}
+
+  <ul>
+    {{#EasySearch.Each index=ConsultationIndex}}
+      <li>Name of the player: {{firstName}} </li>
+    {{/EasySearch.Each}}
+  </ul>
+
+  
+
+  {{#EasySearch.IfNoResults index=ConsultationIndex}}
+    <div class="no-results">No results found!</div>
+  {{/EasySearch.IfNoResults}}
+  {{#EasySearch.IfSearching index=ConsultationIndex}}
+  <div>Searching...</div>
+{{/EasySearch.IfSearching}}
+</template>
+

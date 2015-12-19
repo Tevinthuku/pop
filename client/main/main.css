@@ -1,0 +1,12 @@
+.username{
+    position:absolute;
+    top:140px;
+    left:10px;
+}
+nav{
+    z-index:10;
+    
+}
+.logo{
+    margin-left:60px;
+}

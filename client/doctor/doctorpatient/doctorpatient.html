@@ -1,0 +1,204 @@
+<template name="doctorpatient">
+     <div class="row doctor-patient">
+             <div class="patient-doctor-profile col s12 pink darken-1">
+                       <div class="row">
+                           <div class="patient-doctor-name col s12 m4 l3">
+                               <h4 class="white-text">Tevin Thuku</h4>
+                               
+                                <h5 class="white-text">
+                                   25-Temperature
+                               </h5>
+                               
+                               <h5 class="white-text">
+                                   30-Weight
+                               </h5>
+                               
+                           </div>
+                           
+                           
+                           <div class="patient-doctor-nurse-details col s12 m4 l3">
+                               <h5 class="white-text">Nurse Description</h5>
+                               Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                               sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                               magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+                               quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+                               ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
+                               dolor in hendrerit in vulputate velit esse molestie consequat,
+                               vel illum dolore eu feugiat nulla facilisis at vero eros et
+                               accumsan et iusto odio dignissim qui blandit praesent luptatum
+                               zzril delenit augue duis dolore te feugait nulla facilisi.
+                               Nam liber tempor cum soluta nobis eleifend option congue
+                           </div>
+                           <div class="patient-doctor-bio col s12 m4 l3">
+                                            <div class="row">
+                                               <h5>To The Pharmacy</h5>
+                                                       <div class="col s12">
+                                                                     <label for="last_name" class="white-text">Finding 1</label>
+                                                                     <input id="last_name" type="text" class="validate" name="doctorFinding1">
+                                                       </div>
+                                                       
+                                                        <div class="col s12">
+                                                                     <label for="last_name" class="white-text">Finding 2</label>
+                                                                     <input id="last_name" type="text" class="validate" name="doctorFinding2">
+                                                       </div>
+                                                       
+                                                        <div class="col s12">
+                                                                     <label for="last_name" class="white-text">Finding 3</label>
+                                                                     <input id="last_name" type="text" class="validate" name="doctorFinding3">
+                                                       </div>
+                                                       
+                                                        <div class="col s12">
+                                                                     <label for="last_name" class="white-text">Finding 4</label>
+                                                                     <input id="last_name" type="text" class="validate" name="doctorFinding4">
+                                                       </div>
+                                                       
+                                                        <div class="col s12">
+                                                                     <label for="last_name" class="white-text">Message To The Pharmacist</label>
+                                                                     <textarea id="textarea1" class="materialize-textarea" name="doctorMessageToPharmacist"></textarea>
+                                                        </div>
+
+                                                                               
+                                                                   
+                                                                    <div class="col s12 pink lighten-1 hoverable">
+                                                                               <h6 class="white-text center-align">SUBMIT TO PHARMACIST</h6>
+                                                                    </div>
+                                                       
+                                           </div>
+                           </div>
+                           <div class="patient-doctor-nurse col s12 m12 l3">
+                                           <div class="row">
+                                               <h5>To The Laboratory</h5>
+                                                       <div class="col s12">
+                                                                     <label for="last_name" class="white-text">Finding 1</label>
+                                                                     <input id="last_name" type="text" class="validate" name="doctorToLabFinding1">
+                                                       </div>
+                                                       
+                                                        <div class="col s12">
+                                                                     <label for="last_name" class="white-text">Finding 2</label>
+                                                                     <input id="last_name" type="text" class="validate" name="doctorToLabFinding2">
+                                                       </div>
+                                                       
+                                                        <div class="col s12">
+                                                                     <label for="last_name" class="white-text">Finding 3</label>
+                                                                     <input id="last_name" type="text" class="validate" name="doctorToLabFinding3">
+                                                       </div>
+                                                       
+                                                        <div class="col s12">
+                                                                     <label for="last_name" class="white-text">Finding 4</label>
+                                                                     <input id="last_name" type="text" class="validate" name="doctorToLabFinding4">
+                                                       </div>
+                                                       
+                                                        <div class="col s12">
+                                                                     <label for="last_name" class="white-text">Message To Laboratory</label>
+                                                                     <textarea id="textarea1" class="materialize-textarea" name="doctorToLabMessage"></textarea>
+                                                        </div>
+
+                                                                               
+                                                                   
+                                                                    <div class="col s12 pink lighten-1 hoverable">
+                                                                               <h6 class="white-text center-align">SUBMIT TO LABORATORY</h6>
+                                                                    </div>
+                                                       
+                                           </div>
+                            </div>
+                       </div>
+                       
+                       
+
+                       
+             </div>
+     </div>
+     
+     <!--the search disease-->
+     
+     
+  <!-- Modal Trigger -->
+  <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+    <a class="modal-trigger btn-floating btn-large pink accent-4" href="#disease">
+      <i class="large mdi-action-search"></i>
+    </a>
+  </div>
+
+  <!-- Modal Structure -->
+  <div id="disease" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4 class="center-align">Search Header</h4>
+              {{> searchDisease}}
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+    </div>
+  </div>
+     
+
+        
+</template>
+
+<template name="searchDisease">
+    
+    
+      {{> EasySearch.Input index=DiseaseIndex}}
+    
+    <ul class="collapsible-Search-disease popout" data-collapsible="accordion">
+             {{#EasySearch.Each index=DiseaseIndex}}
+                   
+                                <li>
+                                  <div class="collapsible-header">
+                                      
+                                      {{diseaseName}}-{{diseaseCode}}
+                                     
+                                     
+                                  </div>
+                                  <div class="collapsible-body">
+                                      <h5 class="center-align">Symptoms</h5>
+                                      <div class="row">
+                                          <div class="col s3">
+                                              <div class="chip">{{diseaseSymptom1}}</div>
+                                              
+                                          </div>
+                                          <div class="col s3">
+                                              <div class="chip">{{diseaseSymptom2}}</div>
+                                          </div>
+                                          <div class="col s3">
+                                              <div class="chip">{{diseaseSymptom3}}</div>
+                                              
+                                          </div>
+                                          <div class="col s3">
+                                              <div class="chip">{{diseaseSymptom4}}</div>
+                                          </div>
+                                      </div>
+                                          
+                                      
+                                      <h5 class="center-align">Descrption</h5>
+                                      
+                                      <p>{{diseaseDescription}}</p>
+                                      <h5 class="center-align">Cures</h5>
+                                      <div class="row">
+                                                                            
+                                          <div class="col s3"><div class="chip">{{diseaseCure1}}</div></div>
+                                          <div class="col s3"><div class="chip">{{diseaseCure2}}</div></div>
+                                          <div class="col s3"><div class="chip">{{diseaseCure3}}</div></div>
+                                          <div class="col s3"><div class="chip">{{diseaseCure4}}</div></div>
+                                          
+                                      </div>
+    
+                                      
+                                  </div>
+                                </li>
+                     
+             {{/EasySearch.Each}} 
+    </ul>
+    
+    
+    
+      {{> EasySearch.LoadMore index=DiseaseIndex}}
+    
+      {{#EasySearch.IfNoResults index=DiseaseIndex}}
+        
+            <h6 class="center-align">No results found!</h6>
+    
+      {{/EasySearch.IfNoResults}}
+  
+
+</template>
+

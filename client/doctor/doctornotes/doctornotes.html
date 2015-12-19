@@ -1,0 +1,32 @@
+<template name="doctornotes">
+            <div class="row">
+           
+                      {{#each disease}}
+                        {{> diseaseItem}}
+                      {{/each}}  
+            
+           </div>
+</template>
+
+      
+
+      
+
+
+<template name="diseaseItem">
+
+       <div class="col s12 m6 l4">
+                  <div class="card pink darken-3">
+                    <div class="card-content white-text">
+                      <span class="card-title">{{diseaseName}}</span>
+                      <p class="truncate">{{diseaseDescription}}</p>
+                    </div>
+                    <div class="card-action">
+                      <a href="{{pathFor route="doctorotesdetails"}}">View Full</a>
+                      <a href="#" class="doctor-delete">Delete</a>
+                    </div>
+                  </div>
+       </div>
+  
+            
+</template>

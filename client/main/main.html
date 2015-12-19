@@ -1,0 +1,118 @@
+<template name="main">
+  <div class="navbar-fixed">
+    <nav class="pink darken-4">
+                     <a href="#!" class="brand-logo center">Hospital</a>
+                     
+                     
+                     <a href="#!" class="secondary-content"><span class="new badge pink accent-3">10</span></a>
+                     
+                    <ul id="slide-out" class="side-nav">
+                      
+                        <img src="/abstract.jpg" class="abstract" />
+                        {{#if currentUser}}
+                        <!--username helper-->
+                        <h5 class="white-text username">{{username}}</h5>
+                        
+                        {{else}}
+                        
+                        <h5 class="white-text username">Not Logged In</h5>
+                        
+                        {{/if}}
+                        <li><a href="{{pathFor route="home"}}" class="waves-effect waves-red list"><i class="small mdi-action-account-balance left"></i>Home</a></li>
+                        <!--The Counter-->
+                        <li class="no-padding">
+                            <ul class="collapsible collapsible-accordion">
+                              <li>
+                                <a class="collapsible-header"><i class="small mdi-action-account-circle left"></i>Counter</a>
+                                <div class="collapsible-body">
+                                  <ul>
+                                    <li><a href="{{pathFor route="new"}}" class="waves-effect waves-red list"><i class="small mdi-action-account-box left"></i>New Patient</a></li>
+                                    <li><a href="{{pathFor route="old"}}" class="waves-effect waves-red list"><i class=" small mdi-action-account-child left"></i>Revisit</a></li>
+                                  </ul>
+                                </div>
+                              </li>
+                            </ul>
+                        </li>
+                        
+                        <!--The Nurse-->
+                        <li class="no-padding">
+                            <ul class="collapsible collapsible-accordion">
+                              <li>
+                                <a class="collapsible-header"><i class="small mdi-action-face-unlock left"></i>Nurse</a>
+                                <div class="collapsible-body">
+                                  <ul>
+                                    <li><a href="{{pathFor route="nurse"}}" class="waves-effect waves-red list"><i class="small mdi-content-filter-list left"></i>Nurse List</a></li>
+                                    <li><a href="{{pathFor route="nursedetails"}}" class="waves-effect waves-red list"><i class="small mdi-action-book left"></i>Nurse Details</a></li>
+                                  </ul>
+                                </div>
+                              </li>
+                            </ul>
+                        </li>
+                        
+                        <!--the doctor-->
+                        <li class="no-padding">
+                            <ul class="collapsible collapsible-accordion">
+                              <li>
+                                <a class="collapsible-header"><i class="small mdi-action-verified-user left"></i>Doctor</a>
+                                <div class="collapsible-body">
+                                  <ul>
+                                    <li><a href="{{pathFor route="doctorcreate"}}" class="waves-effect waves-red list"><i class="small mdi-content-create left"></i>Doctor Write</a></li>
+                                    <li><a href="{{pathFor route="doctorlist"}}" class="waves-effect waves-red list"><i class="small mdi-content-filter-list left"></i>Doctor List</a></li>
+                                     <li><a href="{{pathFor route="doctorpatient"}}" class="waves-effect waves-red list"><i class="small mdi-image-blur-on left"></i>Doctor Patient</a></li>
+                                     <li><a href="{{pathFor route="doctornotes"}}" class="waves-effect waves-red list"><i class="small mdi-content-mail left"></i>Doctor Notes</a></li>
+                                  </ul>
+                                </div>
+                              </li>
+                            </ul>
+                        </li>
+                        
+                        
+                        <!--Pharmacy-->
+                        
+                        <li class="no-padding">
+                            <ul class="collapsible collapsible-accordion">
+                              <li>
+                                <a class="collapsible-header"><i class="small mdi-action-turned-in-not left"></i>Pharmacy</a>
+                                <div class="collapsible-body">
+                                  <ul>
+                                    <li><a href="{{pathFor route="pharmacylist"}}" class="waves-effect waves-red list"><i class="small mdi-content-filter-list left"></i>Pharmacy List</a></li>
+                                     <li><a href="{{pathFor route="pharmacyprofile"}}" class="waves-effect waves-red list"><i class="small mdi-action-description left"></i>Pharmacy profile</a></li>
+                                  </ul>
+                                </div>
+                              </li>
+                            </ul>
+                        </li>
+                        
+                        <!--Cashier-->
+                        
+                        <li class="no-padding">
+                            <ul class="collapsible collapsible-accordion">
+                              <li>
+                                <a class="collapsible-header"><i class="small mdi-editor-attach-money left"></i>Cashier</a>
+                                <div class="collapsible-body">
+                                  <ul>
+                                     <li><a href="{{pathFor route="cashierlist"}}" class="waves-effect waves-red list"><i class="small mdi-content-filter-list left"></i>Cashier List</a></li>
+                                     <li><a href="{{pathFor route="cashierprofile"}}" class="waves-effect waves-red list"><i class="small mdi-action-assignment-ind left"></i>Cashier Profile</a></li>
+                                  </ul>
+                                </div>
+                              </li>
+                            </ul>
+                        </li>
+                        
+                        <li><a href="{{pathFor route="notes"}}" class="waves-effect waves-red list"><i class="small mdi-editor-mode-edit left"></i>Notes</a></li>
+                        <li><a href="{{pathFor route="problems"}}" class="waves-effect waves-red list"><i class="small mdi-editor-publish left"></i>Problems</a></li>
+                        
+                        {{#if currentUser}}
+                        <li><a href="#!" class="logout"><i class="small mdi-action-done-all left"></i>Log  Out</a></li>
+                        {{else}}
+                        <li><a href="{{pathFor route="login"}}" class="waves-effect waves-red list"><i class="small  mdi-action-verified-user left"></i>Login</a></li>
+                        {{/if}}
+                   </ul>
+                        <a href="#" data-activates="slide-out" class="button-collapse show-on-large waves-effect waves-red"><i class="mdi-navigation-menu"></i></a>
+    </nav>
+  </div>  
+         
+          {{> yield}}
+        
+   
+</template>
